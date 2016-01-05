@@ -53,32 +53,21 @@ nav.navbar.navbar-default.navbar-fixed-top
           //- Umpr
           a.navbar-link(href="http://umpr.umple.org/")
             i.fa.fa-external-link-square
-            | &nbsp; Umpr
+            | &nbsp;Umpr
 
-      form.navbar-form.navbar-left(role='search')
+      //form.navbar-form.navbar-left(role='search')
+      //  .form-group
+      //    input.form-control(type='text')
+      //
+      //  button.btn.btn-default(type='submit') Submit
+
+      form#generateForm.navbar-form.navbar-right
         .form-group
-          input.form-control(type='text')
 
-        button.btn.btn-default(type='submit') Submit
+          //- Class Diagrams
+          label.sr-only(for='generateLanguageSelect') Select a Language to Generate
+          select#generateLanguageSelect.selectpicker(title='Choose Language...')
+            each desc, file in locals.classDiagrams
+              option(value='#{file}.ump', data-subtext='#{file}.ump')= desc
 
-      ul.nav.navbar-nav.navbar-right
-        li
-          a(href='#') Link
-        li.dropdown
-          a.dropdown-toggle(href='#', data-toggle='dropdown') Dropdown
-            strong.caret
-
-          ul.dropdown-menu
-            li
-              a(href='#') Action
-
-            li
-              a(href='#') Another action
-
-            li
-              a(href='#') Something else here
-
-            li.divider
-
-            li
-              a(href='#') Separated link
+          button.btn.btn-default Generate

@@ -43,6 +43,9 @@
     },
     "assert/assert.d.ts": {
       "commit": "efd40e67ff323f7147651bdbef03c03ead7b1675"
+    },
+    "jquery/jquery.d.ts": {
+      "commit": "6a6ad7068a177c0d7a8a20830626cb63277191c5"
     }
   }
 }

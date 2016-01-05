@@ -1,0 +1,41 @@
+language: node_js
+# We use Ruby because we need rvm, but unforunately, on OSX we have to manually install nvm via homebrew.
+# See: https://github.com/travis-ci/travis-ci/issues/2311
+
+os:
+  - linux
+#  - osx
+
+node_js:
+  - 5.3
+  - 4.2
+
+cache:
+  directories:
+    # tsd
+    - $TRAVIS_BUILD_DIR/typings/
+
+    # npm
+    - $TRAVIS_BUILD_DIR/node_modules/
+
+before_install:
+#  - git clone https://github.com/creationix/nvm.git /tmp/.nvm
+#  - source /tmp/.nvm/nvm.sh
+#  - nvm install $NODE_VERSION
+#  - nvm use $NODE_VERSION
+
+#  Versions:
+  - node --version
+  - npm --version
+
+install:
+  - npm install -g tsd grunt-cli
+  - npm install
+  - tsd install
+  - gem install sass
+
+before_script:
+  - grunt build
+
+script:
+  - npm test
