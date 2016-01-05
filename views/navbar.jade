@@ -1,0 +1,84 @@
+//-
+    Created by kevin on 05/01/16.
+
+//  Main navbar for the content window
+
+
+nav.navbar.navbar-default.navbar-fixed-top
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle(type='button', data-toggle='collapse', data-target='#global-nav-bar')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+
+      a.navbar-brand(href='#') UmpleOnline
+    #global-nav-bar.collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li.dropdown
+          a.dropdown-toggle(href='#', data-toggle='dropdown')
+            | Save
+            strong.caret
+          ul.dropdown-menu
+            li: a(href='#')
+              i.fa.fa-download
+              | &nbsp; Source
+            li: a(href='#')
+              i.fa.fa-bookmark
+              | &nbsp; Encoded URL
+
+      // Loading examples:
+      p.navbar-text
+        i.fa.fa-folder-open
+        | &nbsp; Load
+      form#loadExampleForm.navbar-form.navbar-left
+        .form-group
+
+
+          //- Class Diagrams
+          label.sr-only(for='classDiagramSelect') Select a Class Diagram
+          select#classDiagramSelect.selectpicker(data-live-search='true'
+          title='Class diagram...')
+            each desc, file in locals.classDiagrams
+              option(value='#{file}.ump', data-subtext='#{file}.ump')= desc
+
+          //- State Diagrams
+          label.sr-only(for='stateDiagramSelect') Select a State Diagram
+          select#stateDiagramSelect.selectpicker(data-live-search='true'
+          title='State diagram...')
+            each desc, file in locals.classDiagrams
+              option(value='#{file}.ump', data-subtext='#{file}.ump')= desc
+
+          //- Umpr
+          a.navbar-link(href="http://umpr.umple.org/")
+            i.fa.fa-external-link-square
+            | &nbsp; Umpr
+
+      form.navbar-form.navbar-left(role='search')
+        .form-group
+          input.form-control(type='text')
+
+        button.btn.btn-default(type='submit') Submit
+
+      ul.nav.navbar-nav.navbar-right
+        li
+          a(href='#') Link
+        li.dropdown
+          a.dropdown-toggle(href='#', data-toggle='dropdown') Dropdown
+            strong.caret
+
+          ul.dropdown-menu
+            li
+              a(href='#') Action
+
+            li
+              a(href='#') Another action
+
+            li
+              a(href='#') Something else here
+
+            li.divider
+
+            li
+              a(href='#') Separated link

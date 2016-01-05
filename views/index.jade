@@ -1,0 +1,293 @@
+
+extends ./layout.jade
+
+block navbar
+  include ./navbar.jade
+
+block content
+  .col-md-4
+    p Code goes here
+  .col-md-8
+    .media
+      a.pull-left(href='#')
+        img.media-object(alt='Bootstrap Media Preview', src='http://lorempixel.com/64/64/')
+
+      .media-body
+        h4.media-heading Nested media heading
+        |  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+
+        .media
+          a.pull-left(href='#')
+            img.media-object(alt='Bootstrap Media Another Preview', src='http://lorempixel.com/64/64/')
+
+          .media-body
+            h4.media-heading Nested media heading
+            |  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+
+block footer
+  include ./footer.jade
+
+  //
+  //#header.row
+  //  .inRow.logo
+  //    img(src='images/umpleonline_title.jpg', title='UmpleOnline - Draw and Type your next model')
+  //  .inRow
+  //    p.pagedescription
+  //      | Draw on the right, write (Umple) model code on the left. Generate Java, C++, PHP, Alloy, NuSMV or Ruby code
+  //      | from your models.
+  //      br
+  //      | Visit
+  //      a(href='http://manual.umple.org', target='helppage') the User Manual
+  //      |  or
+  //      a(href='http://www.umple.org') the Umple Home Page for help. &nbsp;&nbsp;&nbsp;
+  //      a(href='download_eclipse_umple_plugin.html') Download Umple &nbsp;&nbsp;&nbsp;
+  //      a(href='https://github.com/umple/umple/issues/new', target='newissue') Report an Issue
+  //noscript
+  //  br
+  //  font(color='red')
+  //    | JavaScript is disabled so the dynamic features of this page will not work. To use UmpleOnline, turn Javascript
+  //    | on. Otherwise you can download the command-line Umple compiler or use Eclipse.
+  //
+  //input#filename(type='hidden', value=filename)
+  //input#advancedMode(type='hidden', value='0')
+  //
+  //#topLine.bookmarkableUrl
+  //  span#linetext
+  //    | Line=
+  //    input#linenum(size='2', value='1', onchange='Action.setCaretPosition(value);')
+  //  a.topBookmarkable(href='umple.php?model=#{modelId}') Changes at this URL are saved
+  //  a.topBookmarkable(href='bookmark.php?model=#{modelId}') Create Bookmarkable URL
+  //  span#restorecode
+  //    a(href='#')  Restore Saved State &nbsp; &nbsp;
+  //  span#exampleMessage
+  //  span#feedbackMessage
+  //
+  //#mainApplication.row
+  //  #textEditorColumn.inRow(tabindex='2')
+  //    #topTextEditor
+  //      textarea#umpleModelEditorText.umpleModelEditor(wrap='off')
+  //
+  //    #bottomTextEditor
+  //      textarea#umpleLayoutEditorText.umpleLayoutEditor(wrap='off')
+  //
+  //  #paletteColumn.inRow
+  //    #palette.palette
+  //      // GROUP 1 OF OPTIONS
+  //      h3
+  //        a(href='#') SAVE &amp; RESET
+  //
+  //      .section
+  //        ul.first
+  //          li.subtitle SAVE
+  //          li#ttSaveBookmark
+  //            #menuBookmarkable.bookmarkableUrl
+  //              a(href='umple.php?model=#{modelId}') Bookmark Model
+  //          li#ttSaveModel
+  //            #menuBookmarkable.bookmarkableUrl
+  //              a(href='bookmark.php?model=#{modelId}') Save Model
+  //          li#buttonCopy.copy
+  //              img(src='images/copy.png')
+  //              span Source
+  //          li#buttonCopyEncodedURL.copyEncoded
+  //            img(src='images/copy.png')
+  //            span Encoded URL
+  //          li.dropbox-add-saver
+  //        ul.second.center-children
+  //          li.subtitle RESET
+  //          li#ttStartOver
+  //            #buttonStartOver.jQuery-palette-button(value='Start Over')
+  //
+  //        // GROUP 2 OF OPTIONS
+  //      h3
+  //        a(href='#tools') TOOLS
+  //
+  //      .section
+  //        ul#mainLoadMenu.first.center-children
+  //          li.subtitle  Load
+  //
+  //          li#exampleType
+  //            select#inputExampleType.button(name='inputExampleType', size='1')
+  //              option#cdModels(name='optionExampleType', value='cdModels') Class Diagrams
+  //              option#smModels(name='optionExampleType', value='smModels') State Machines
+  //              option#structureModels(name='optionExampleType', value='structureModels') Composite Structure
+  //
+  //          li#itemLoadExamples
+  //            select#inputExample.button(name='inputExample', size='1', data-diagram-type='class')
+  //              option#defaultExampleOption(name='optionExample', value='') Select Example
+
+  //              option.openUmprOption(name='optionExample', value='') Select from Umpr Repository...
+  //
+  //          li#itemLoadExamples2
+  //            select#inputExample2.button(name='inputExample2', size='1', data-diagram-type='state')
+  //              option#defaultExampleOption2(name='optionExample2', value='') Select Example
+  //              option(name='optionExample', value='AgentsCommunication.ump') Agents Communicating
+  //              option(name='optionExample', value='ApplicationProcessing.ump') Application for a Grant
+  //              option(name='optionExample', value='Booking.ump') Booking (Airline)
+  //              option(name='optionExample', value='CanalLockStateMachine.ump') Canal Lock
+  //              option(name='optionExample', value='CarTransmission.ump') Car Transmission
+  //              option(name='optionExample', value='ComplexStateMachine.ump') Complex Symbolic
+  //              option(name='optionExample', value='CourseSectionFlat.ump') Course Section
+  //              option(name='optionExample', value='CourseSectionNested.ump') Course Section (Nested)
+  //              option(name='optionExample', value='DigitalWatchNested.ump') Digital Watch Nested
+  //              option(name='optionExample', value='DigitalWatchFlat.ump') Digital Watch (Flat)
+  //              option(name='optionExample', value='Elevator_State_Machine.ump') Elevator
+  //              option(name='optionExample', value='GarageDoor.ump') Garage Door
+  //              option(name='optionExample', value='LibraryLoanStateMachine.ump') Library Loan
+  //              option(name='optionExample', value='Lights.ump') Light (3 alternatives)
+  //              option(name='optionExample', value='MicrowaveOven2.ump') Microwave Oven
+  //              option(name='optionExample', value='Ovens.ump') Oven (3 alternatives)
+  //              option(name='optionExample', value='ParliamentBill.ump') Parliament Bill
+  //              option(name='optionExample', value='Phone.ump') Phone and Lines
+  //              option(name='optionExample', value='Runway.ump') Runway
+  //              option(name='optionExample', value='SecurityLight.ump') Security Light
+  //              option(name='optionExample', value='SpecificFlight.ump') Specific Flight (Airline)
+  //              option(name='optionExample', value='SpecificFlightFlat.ump') Specific Flight (Airline - Flat)
+  //              option(name='optionExample', value='TcpIpSimulation.ump') TCP/IP Simulation
+  //              option(name='optionExample', value='TelephoneSystem2.ump') Telephone Set Modes
+  //              option(name='optionExample', value='TicTacToe.ump') Tic Tac Toe or Noughts and Crosses
+  //              option(name='optionExample', value='TollBooth.ump') Toll Booth
+  //              option(name='optionExample', value='TrafficLightsA.ump') Traffic Lights A
+  //              option(name='optionExample', value='TrafficLightsB.ump') Traffic Lights B
+  //              option.openUmprOption(name='optionExample', value='') Select from Umpr Repository...
+  //
+  //          li#itemLoadExamples3
+  //            select#inputExample3.button(name='inputExample3', size='1', data-diagram-type='composite')
+  //              option#defaultExampleOption3(name='optionExample3', value='') Select Example
+  //              option(name='optionExample', value='OBDCarSystem.ump') OBD Car System
+  //              option(name='optionExample', value='PingPong.ump') Ping Pong
+  //              option.openUmprOption(name='optionExample', value='') Select from Umpr Repository...
+  //
+  //          li.dropbox-add-chooser
+  //
+  //        ul#mainDrawMenu.second.toggle
+  //          li.subtitle Draw
+  //          li#buttonAddClass.toggleToolItem(name='paletteItem', title='Select and click on the canvas to add a new class.')
+  //            img(src='images/class.png')
+  //            span Class
+  //
+  //          li#buttonAddAssociation.toggleToolItem(name='paletteItem', title='Select and click on a class to draw an association.')
+  //            img(src='images/assoc.png')
+  //            span Association
+  //          //
+  //            <li id="buttonBendAssociation" class="toggleToolItem" name="paletteItem">
+  //            <img src="images/assocbend.jpg"/>
+  //            Bend Assoc.
+  //            </li>
+  //          li#buttonAddGeneralization.toggleToolItem(name='paletteItem', title='Select and click on the child class to draw a generalization line to the parent class.')
+  //            img(src='images/generalization.png')
+  //            span Generalization
+  //
+  //          li#buttonDeleteEntity.toggleToolItem(name='paletteItem', title='Select and click on an element to remove it from your model.')
+  //            img(src='images/delete.png')
+  //            span Delete
+  //          li#buttonUndo(name='paletteItem')
+  //            img(src='images/undo.png')
+  //            span Undo
+  //
+  //          li#buttonRedo(name='paletteItem')
+  //            img(src='images/redo.png')
+  //            span Redo
+  //          li#buttonSyncDiagram(name='paletteItem')
+  //            img(src='images/sync_diagram.png')
+  //            span Sync Diagram
+  //      // GROUP 3 OF OPTIONS
+  //      h3
+  //        a(href='#options') OPTIONS
+  //
+  //      .section
+  //        #buttonViewComplete(title='View Complete') Selected view has opened in a new window.
+  //
+  //        ul.first.toggle
+  //          li.subtitle  Show View
+  //
+  //          li#ttShowHideCanvas
+  //            input#buttonShowHideCanvas.checkbox(type='checkbox', name='buttonShowHideCanvas', value='buttonShowHideCanvas')
+  //            a#labelShowHideCanvas.buttonExtend Diagram (Canvas)
+  //
+  //          li#ttShowHideTextEditor
+  //            input#buttonShowHideTextEditor.checkbox(type='checkbox', name='buttonShowHideTextEditor', value='buttonShowHideTextEditor')
+  //            a#labelShowHideTextEditor.buttonExtend Text Editor
+  //
+  //          li#ttShowHideLayoutEditor.layoutListItem
+  //            input#buttonShowHideLayoutEditor.checkbox(type='checkbox', name='buttonShowHideLayoutEditor', value='buttonShowHideLayoutEditor')
+  //            a#labelShowHideLayoutEditor.buttonExtend Layout Editor
+  //
+  //          li#ttToggleAttributes.layoutListItem
+  //            input#buttonToggleAttributes.checkbox(type='checkbox')
+  //            a#labelToggleAttributes.buttonExtend Attributes
+  //
+  //          li#ttToggleMethods.layoutListItem
+  //            input#buttonToggleMethods.checkbox(type='checkbox')
+  //            a#labelToggleMethods.buttonExtend Methods
+  //
+  //          li#ttToggleActions.layoutListItem
+  //            input#buttonToggleActions.checkbox(type='checkbox')
+  //            a#labelToggleActions.buttonExtend Actions
+  //
+  //          li#ttToggleTraits.layoutListItem
+  //            input#buttonToggleTraits.checkbox(type='checkbox')
+  //            a#labelToggleTraits.buttonExtend Traits
+  //
+  //        ul.second
+  //          li#diagramTypeTitle.subtitle  Diagram Type
+  //          li#ttShowEditableClassDiagram
+  //            input#buttonShowEditableClassDiagram.radio(type='radio', name='buttonCanvasType', value='buttonCanvasTypeEditableClassDiagram')
+  //            a#labelShowEditableClassDiagram.buttonExtend Editable Class
+  //
+  //          li#ttShowGvClassDiagram
+  //            input#buttonShowGvClassDiagram.radio(type='radio', name='buttonCanvasType', value='buttonCanvasTypeGvClassDiagram')
+  //            a#labelShowGvClassDiagram.buttonExtend GraphViz Class
+  //
+  //          li#ttShowGvStateDiagram
+  //            input#buttonShowGvStateDiagram.radio(type='radio', name='buttonCanvasType', value='buttonCanvasTypeGVStateDiagram')
+  //            a#labelShowGvStateDiagram.buttonExtend GraphViz State
+  //
+  //          li#ttShowStructureDiagram
+  //            input#buttonShowStructureDiagram.radio(type='radio', name='buttonCanvasType', value='buttonCanvasTypeStructureDiagram')
+  //            a#labelShowStructureDiagram.buttonExtend Composite Structure
+  //
+  //        ul.second
+  //          li#preferencesTitle.subtitle  Preferences
+  //
+  //          li#ttPhotoReady
+  //            input#buttonPhotoReady.checkbox(type='checkbox', name='photoReady', value='photoReady')
+  //
+  //            a#labelPhotoReady.buttonExtend Photo Ready
+  //
+  //          li#ttManualSync
+  //            input#buttonManualSync.checkbox(type='checkbox', name='manualSync', value='manualSync')
+  //
+  //            a#labelManualSync.buttonExtend Manual Sync
+  //
+  //        ul.second
+  //          li.subtitle  Other Views
+  //          // <li id="buttonPngImage" class="png"><img src="images/png.png" title="Generate PNG Image" /> PNG View</li> //DISABLED
+  //          li#ttYumlImage
+  //            img#buttonYumlImage(src='images/yuml.png')
+  //            a#labelYumlImage.buttonExtend Yuml View
+  //          // <li id="buttonSimulateCode" class="simulate"><img src="images/simulate.png" title="Simulate Code" /> Simulate</li> //DISABLED
+  //
+  //
+  //  #umpleCanvasColumn.umpleCanvasColumn.inRow
+  //    #umpleCanvas.surface(tabindex='1')
+  //
+  //#generatedCodeRow.row
+  //  li#ttTabsCheckbox
+  //    input#buttonTabsCheckbox.checkbox(type='checkbox', name='buttonTabsCheckbox', value='buttonTabsCheckbox')
+  //    | &#x9;&#x9;&#x9;
+  //    a#labelTabsCheckbox.buttonExtend Show Files in Separate Tabs
+  //
+  //  #messageArea
+  //  #tabRow
+  //  #innerGeneratedCodeRow
+  //.spacer.row
+  ////script.
+  ////  Page.init(
+  ////  <?php if($showDiagram) { ?> true  <?php } else { ?> false <?php } ?>,
+  ////  <?php if($showText) { ?> true  <?php } else { ?> false <?php } ?>,
+  ////  <?php if($showMenu) { ?> true  <?php } else { ?> false <?php } ?>,
+  ////  <?php if($readOnly) { ?> true  <?php } else { ?> false <?php } ?>,
+  ////  <?php if($showLayout) { ?> true <?php } else { ?> false <?php } ?>,
+  ////  "<?php echo $diagramType ?>",
+  ////          "<?php echo $generateDefault ?>"
+  ////  ); //
