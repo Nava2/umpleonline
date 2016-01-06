@@ -37,7 +37,7 @@ module.exports = function(grunt) {
         ts: {
             app: {
                 outDir: '.',
-                src: ['app.ts'],
+                src: ['src/app.ts'],
 
                 options: {
                     module: 'commonjs', //or commonjs
@@ -109,8 +109,7 @@ module.exports = function(grunt) {
 
         clean: {
             js: ['public/js/**/*.js', 'public/js/**/*.map', 'public/js/**/*.d.ts',
-                 'routes/**/*.js', 'routes/**/*.map', 'routes/**/*.d.ts',
-                 'app.js*', 'app.d.ts'],
+                 'routes/**/*.js', 'routes/**/*.map', 'routes/**/*.d.ts'],
             css: ['public/stylesheets/**/*.css', 'public/stylesheets/**/*.map']
         }
 
@@ -124,6 +123,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-ts');
 
-    grunt.registerTask('default', ['jshint', 'clean', 'ts', 'concat', 'sass', 'uglify']);
+    grunt.registerTask('init', ['jshint', 'clean']);
 
+    grunt.registerTask('build', ['init', 'ts:routes', 'ts:app', 'ts:client', 'sass']);
+    grunt.registerTask('dist', ['build', 'concat', 'uglify']);
+
+    grunt.registerTask('default', 'build');
 };
