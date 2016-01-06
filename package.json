@@ -27,6 +27,7 @@
     "grunt-contrib-uglify": "^0.10.1",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-ts": "^5.1.0",
+    "grunt-tsd": "^0.1.0",
     "mocha": "^2.3.3",
     "tsd": "^0.6.5",
     "typescript": "^1.6.2"
