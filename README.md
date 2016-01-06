@@ -1,11 +1,13 @@
 # UmpleOnline
-[![Build Status](https://travis-ci.org/Nava2/umpleonline.svg?branch=master)](https://travis-ci.org/Nava2/umpleonline)
-
+[![Unix Build Status](https://travis-ci.org/Nava2/umpleonline.svg?branch=master)](https://travis-ci.org/Nava2/umpleonline) [![Windows Build status](https://ci.appveyor.com/api/projects/status/5wibhyitpw7gbscp?svg=true)](https://ci.appveyor.com/project/Nava2/umpleonline)
+                          
 This is a rewrite of the original UmpleOnline application written many moons ago by the Umple Developers. This is meant to be a moderinzation and feature improvement over the original. 
 
 ## Building
 
-The application has been tested and built on Mac OS X and Linux through CI. It has been run and built on Windows, but is not tested via CI. 
+The application has been tested and built on [OSX](https://travis-ci.org/Nava2/umpleonline), 
+[Linux](https://travis-ci.org/Nava2/umpleonline) and [Windows](https://ci.appveyor.com/project/Nava2/umpleonline) 
+through CI. 
 
 ### Prerequisites
 
