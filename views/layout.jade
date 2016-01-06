@@ -1,27 +1,9 @@
 //- Mixin that will download the proper resources as required for the client.
 mixin js_resources(dev)
   - var ext = (dev ? '.min' : '')
-  // mousetrap
-  script(src='https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap#{ext}.js')
 
-  // prototype
-  //script(src='https://cdnjs.cloudflare.com/ajax/libs/prototype/1.7.2/prototype#{ext}.js')
-
-  // jquery
-  script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery#{ext}.js')
-
-  // jquery-ui
-  script(src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui#{ext}.js')
-  script(src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js')
-
-  // Code Mirror
-  script(src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/codemirror#{ext}.js')
-  script(src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/addon/fold/foldcode#{ext}.js')
-
-  // Bootstrap
-  script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap#{ext}.js", crossorigin="anonymous")
-
-  script(src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.9.3/js/bootstrap-select.min.js')
+  // bower components:
+  script(src='/js/_bower.js')
 
   script(src='/js/main.js')
 
@@ -41,6 +23,7 @@ mixin css_resources(dev)
   link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css", rel="stylesheet", integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==", crossorigin="anonymous")
   link(rel="stylesheet", href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.9.3/css/bootstrap-select.min.css')
 
+  link(rel='stylesheet' href='stylesheets/_bower.css')
   link(rel='stylesheet' href='stylesheets/styles.css')
 
 doctype html
@@ -56,7 +39,10 @@ html(lang='en')
       block navbar
 
       #content.container
-        block content
+        .col-md-4
+          block codepane
+        .col-md-8
+          block diagram
 
       footer.footer
         block footer

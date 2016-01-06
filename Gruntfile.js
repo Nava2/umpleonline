@@ -111,10 +111,30 @@ module.exports = function(grunt) {
               separator: grunt.util.linefeed + ';' + grunt.util.linefeed
             },
             dist: {
-                src: ['public/js/**/*.js'],
+                src: ['public/js/**/*.js', '!public/js/_bower*'],
                 dest: 'public/js/<%= pkg.name %>.js'
             }
         },
+
+        bower: {
+            install: {
+                options: {
+                    copy: false // Don't copy to lib/
+                }
+            }
+        },
+
+        bower_concat: {
+            all: {
+                dest: 'public/js/_bower.js',
+                cssDest: 'public/stylesheets/_bower.css',
+                separator: grunt.util.linefeed + ';' + grunt.util.linefeed,
+                bowerOptions: {
+                    relative: false
+                }
+            }
+        },
+
         uglify: {
             options: {
                 // the banner is inserted at the top of the output
@@ -122,7 +142,8 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'public/js/<%= pkg.name %>-<%= pkg.version %>.min.js': ['<%= concat.dist.dest %>']
+                  'public/js/<%= pkg.name %>-<%= pkg.version %>.min.js': ['<%= concat.dist.dest %>'],
+                  'public/js/_bower.min.js': 'public/js/_bower.js'
                 }
             }
         },
@@ -138,15 +159,20 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
+
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-clean');
+
+    grunt.loadNpmTasks('grunt-bower-task');
+    grunt.loadNpmTasks('grunt-bower-concat');
+
     grunt.loadNpmTasks('grunt-ts');
     grunt.loadNpmTasks('grunt-tsd');
 
-    grunt.registerTask('init', ['jshint', 'clean', 'tsd:install']);
+    grunt.registerTask('init', ['jshint', 'clean', 'tsd:install', 'bower']);
 
-    grunt.registerTask('build', ['tsd:install', 'ts:routes', 'ts:app', 'ts:client', 'sass']);
+    grunt.registerTask('build', ['tsd:install', 'bower_concat', 'ts:routes', 'ts:app', 'ts:client', 'sass']);
 
     grunt.registerTask('dist', ['build', 'concat', 'uglify']);
 

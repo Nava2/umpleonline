@@ -4,25 +4,26 @@ extends ./layout.jade
 block navbar
   include ./navbar.jade
 
-block content
-  .col-md-4
-    p Code goes here
-  .col-md-8
-    .media
-      a.pull-left(href='#')
-        img.media-object(alt='Bootstrap Media Preview', src='http://lorempixel.com/64/64/')
+block codepane
+  include ./codepane.jade
 
-      .media-body
-        h4.media-heading Nested media heading
-        |  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+block diagram
+  .media
+    a.pull-left(href='#')
+      img.media-object(alt='Bootstrap Media Preview', src='http://lorempixel.com/64/64/')
 
-        .media
-          a.pull-left(href='#')
-            img.media-object(alt='Bootstrap Media Another Preview', src='http://lorempixel.com/64/64/')
+    .media-body
+      h4.media-heading Nested media heading
+      |  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
 
-          .media-body
-            h4.media-heading Nested media heading
-            |  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+      .media
+        a.pull-left(href='#')
+          img.media-object(alt='Bootstrap Media Another Preview', src='http://lorempixel.com/64/64/')
+
+        .media-body
+          h4.media-heading Nested media heading
+          |  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+
 
 block footer
   include ./footer.jade

@@ -18,6 +18,9 @@ cache:
     # npm
     - $TRAVIS_BUILD_DIR/node_modules/
 
+    # bower:
+    - $TRAVIS_BUILD_DIR/bower_components
+
 before_install:
 #  - git clone https://github.com/creationix/nvm.git /tmp/.nvm
 #  - source /tmp/.nvm/nvm.sh

@@ -9,6 +9,14 @@ router.get('/', function(req, res, next) {
     filename: 'filename',
     modelId: 'modelId',
     DEV: true,
+    someJava: "class Shape2D {\n" +
+              "  center;\n" +
+              "}\n" +
+              "//Abstract\n" +
+              "class EllipticalShape {\n" +
+              "  isA Shape2D;\n" +
+              "  semiMajorAxis;\n" +
+              "}",
     classDiagrams: {
       '2DShapes': '2DShapes',
       'AccessControl': 'Access Control',
