@@ -1,0 +1,42 @@
+# Test against this version of Node.js
+environment:
+  ruby_version: "2.2.2"
+
+  matrix:
+    - nodejs_version: "5.3.0"
+    - nodejs_version: "4.2.4"
+
+cache:
+  - node_modules                    # local npm modules
+  - typings
+  - '%APPDATA%\npm-cache'           # npm cache
+
+# Install scripts. (runs after repo cloning)
+install:
+  # Get the latest stable version of Node.js or io.js
+  - ps: Install-Product node $env:nodejs_version
+
+  # Set the ruby path
+  - SET PATH=C:\Ruby%ruby_version%\bin;%PATH%
+
+  # install modules
+  - npm install -g tsd grunt-cli
+  - gem install sass
+  - npm install
+  - tsd install
+
+# Post-install test scripts.
+test_script:
+  # Output useful info for debugging.
+  - node --version
+  - npm --version
+  - tsd --version
+  - tsc --version
+
+  # run tests
+  - ps: npm test --no-color
+  - cmd: npm test --no-color
+
+
+# Don't actually build.
+build: off
