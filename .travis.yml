@@ -29,13 +29,12 @@ before_install:
   - npm --version
 
 install:
-  - npm install -g tsd grunt-cli
+  - npm install -g grunt-cli
   - npm install
-  - tsd install
   - gem install sass
 
 before_script:
-  - grunt build
+  - grunt init build
 
 script:
   - npm test
