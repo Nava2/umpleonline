@@ -6,46 +6,46 @@
   "bundle": "typings/tsd.d.ts",
   "installed": {
     "mocha/mocha.d.ts": {
-      "commit": "4f7b7e01d3a9622bfab0bef469e169529e60c66b"
+      "commit": "f11e49cfb77f99678657ddfe5d43017849675c64"
     },
     "mime/mime.d.ts": {
-      "commit": "4f7b7e01d3a9622bfab0bef469e169529e60c66b"
+      "commit": "f11e49cfb77f99678657ddfe5d43017849675c64"
     },
     "serve-static/serve-static.d.ts": {
-      "commit": "4f7b7e01d3a9622bfab0bef469e169529e60c66b"
+      "commit": "f11e49cfb77f99678657ddfe5d43017849675c64"
     },
     "express/express.d.ts": {
-      "commit": "4f7b7e01d3a9622bfab0bef469e169529e60c66b"
+      "commit": "f11e49cfb77f99678657ddfe5d43017849675c64"
     },
     "node/node.d.ts": {
-      "commit": "4f7b7e01d3a9622bfab0bef469e169529e60c66b"
+      "commit": "f11e49cfb77f99678657ddfe5d43017849675c64"
     },
     "cookie-parser/cookie-parser.d.ts": {
-      "commit": "4f7b7e01d3a9622bfab0bef469e169529e60c66b"
+      "commit": "f11e49cfb77f99678657ddfe5d43017849675c64"
     },
     "debug/debug.d.ts": {
-      "commit": "4f7b7e01d3a9622bfab0bef469e169529e60c66b"
+      "commit": "f11e49cfb77f99678657ddfe5d43017849675c64"
     },
     "jade/jade.d.ts": {
-      "commit": "4f7b7e01d3a9622bfab0bef469e169529e60c66b"
+      "commit": "f11e49cfb77f99678657ddfe5d43017849675c64"
     },
     "morgan/morgan.d.ts": {
-      "commit": "4f7b7e01d3a9622bfab0bef469e169529e60c66b"
+      "commit": "f11e49cfb77f99678657ddfe5d43017849675c64"
     },
     "body-parser/body-parser.d.ts": {
-      "commit": "4f7b7e01d3a9622bfab0bef469e169529e60c66b"
+      "commit": "f11e49cfb77f99678657ddfe5d43017849675c64"
     },
     "node-sass/node-sass.d.ts": {
-      "commit": "4f7b7e01d3a9622bfab0bef469e169529e60c66b"
+      "commit": "f11e49cfb77f99678657ddfe5d43017849675c64"
     },
     "serve-favicon/serve-favicon.d.ts": {
-      "commit": "4f7b7e01d3a9622bfab0bef469e169529e60c66b"
+      "commit": "f11e49cfb77f99678657ddfe5d43017849675c64"
     },
     "assert/assert.d.ts": {
-      "commit": "efd40e67ff323f7147651bdbef03c03ead7b1675"
+      "commit": "f11e49cfb77f99678657ddfe5d43017849675c64"
     },
     "jquery/jquery.d.ts": {
-      "commit": "6a6ad7068a177c0d7a8a20830626cb63277191c5"
+      "commit": "f11e49cfb77f99678657ddfe5d43017849675c64"
     }
   }
 }

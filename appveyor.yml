@@ -1,5 +1,8 @@
 # Test against this version of Node.js
 environment:
+  TSD_GITHUB_TOKEN:
+    secure: QxRBCgabzBrBfQY3YG2fYeMy2NlxNQ4tSdBTboZ7ZTX0AWPYvVJfU0Q1IH8HaVaQ
+
   ruby_version: "2.2.2"
 
   matrix:
@@ -23,19 +26,15 @@ install:
   - npm install -g tsd grunt-cli
   - gem install sass
   - npm install
-  - tsd install
 
 # Post-install test scripts.
 test_script:
   # Output useful info for debugging.
   - node --version
   - npm --version
-  - tsd --version
-  - tsc --version
 
   # run tests
-  - ps: npm test --no-color
-  - cmd: npm test --no-color
+  - npm test
 
 
 # Don't actually build.

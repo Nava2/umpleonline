@@ -19,6 +19,26 @@ module.exports = function(grunt) {
         // read the npm package
         pkg: grunt.file.readJSON('package.json'),
 
+        tsd: {
+            install: {
+                options: {
+                    // execute a command
+                    command: 'reinstall',
+
+                    //optional: always get from HEAD
+                    latest: true,
+
+                    // specify config file
+                    config: './tsd.json',
+
+                    // experimental: options to pass to tsd.API
+                    opts: {
+                        // props from tsd.Options
+                    }
+                }
+            }
+        },
+
         sass: {
             dist: {
                 options: {
@@ -122,11 +142,13 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-ts');
+    grunt.loadNpmTasks('grunt-tsd');
 
-    grunt.registerTask('init', ['jshint', 'clean']);
+    grunt.registerTask('init', ['jshint', 'clean', 'tsd:install']);
 
-    grunt.registerTask('build', ['init', 'ts:routes', 'ts:app', 'ts:client', 'sass']);
+    grunt.registerTask('build', ['tsd:install', 'ts:routes', 'ts:app', 'ts:client', 'sass']);
+
     grunt.registerTask('dist', ['build', 'concat', 'uglify']);
 
-    grunt.registerTask('default', 'build');
+    grunt.registerTask('default', ['init', 'dist']);
 };
