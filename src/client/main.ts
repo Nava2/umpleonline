@@ -6,5 +6,9 @@
 
 $(() => {
 
+  CodeMirror.fromTextArea(<HTMLTextAreaElement>($("#code-editor").get(0)), {
+    lineNumbers: true,
+    mode: "text/x-umple"
+  });
 
 });

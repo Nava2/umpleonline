@@ -24,15 +24,17 @@ install:
   - SET PATH=C:\Ruby%ruby_version%\bin;%PATH%
 
   # install modules
-  - npm install -g tsd grunt-cli
+  - npm install -g bower grunt-cli
   - gem install sass
   - npm install
+  - bower install
 
 # Post-install test scripts.
 test_script:
   # Output useful info for debugging.
   - node --version
   - npm --version
+  - bower --version
 
   # run tests
   - npm test

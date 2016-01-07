@@ -46,6 +46,9 @@
     },
     "jquery/jquery.d.ts": {
       "commit": "f11e49cfb77f99678657ddfe5d43017849675c64"
+    },
+    "codemirror/codemirror.d.ts": {
+      "commit": "f11e49cfb77f99678657ddfe5d43017849675c64"
     }
   }
 }
