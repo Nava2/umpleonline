@@ -28,12 +28,13 @@ before_install:
 #  - nvm use $NODE_VERSION
 
 #  Versions:
+  - npm install -g grunt-cli bower
   - node --version
   - npm --version
   - bower --version
 
 install:
-  - npm install -g grunt-cli bower
+
   - npm install
   - bower install
   - gem install sass
