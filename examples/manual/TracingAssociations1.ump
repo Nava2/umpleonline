@@ -1,0 +1,11 @@
+// This example will record any addition/removal to supervisor assoc link 
+
+class Student {
+  Integer id;
+}
+
+class Professor {
+  1 -- * Student supervisor;
+  
+  trace supervisor;
+}

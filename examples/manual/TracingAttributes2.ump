@@ -1,0 +1,6 @@
+// This traces  getId() method
+class Student
+{
+  Integer id;
+  trace get id;
+}
