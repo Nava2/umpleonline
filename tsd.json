@@ -6,49 +6,55 @@
   "bundle": "typings/tsd.d.ts",
   "installed": {
     "mocha/mocha.d.ts": {
-      "commit": "f11e49cfb77f99678657ddfe5d43017849675c64"
+      "commit": "81b951f1ac437d1eb5ff5171a0bfa6c467634b13"
     },
     "mime/mime.d.ts": {
-      "commit": "f11e49cfb77f99678657ddfe5d43017849675c64"
+      "commit": "81b951f1ac437d1eb5ff5171a0bfa6c467634b13"
     },
     "serve-static/serve-static.d.ts": {
-      "commit": "f11e49cfb77f99678657ddfe5d43017849675c64"
+      "commit": "81b951f1ac437d1eb5ff5171a0bfa6c467634b13"
     },
     "express/express.d.ts": {
-      "commit": "f11e49cfb77f99678657ddfe5d43017849675c64"
+      "commit": "81b951f1ac437d1eb5ff5171a0bfa6c467634b13"
     },
     "node/node.d.ts": {
-      "commit": "f11e49cfb77f99678657ddfe5d43017849675c64"
+      "commit": "81b951f1ac437d1eb5ff5171a0bfa6c467634b13"
     },
     "cookie-parser/cookie-parser.d.ts": {
-      "commit": "f11e49cfb77f99678657ddfe5d43017849675c64"
+      "commit": "81b951f1ac437d1eb5ff5171a0bfa6c467634b13"
     },
     "debug/debug.d.ts": {
-      "commit": "f11e49cfb77f99678657ddfe5d43017849675c64"
+      "commit": "81b951f1ac437d1eb5ff5171a0bfa6c467634b13"
     },
     "jade/jade.d.ts": {
-      "commit": "f11e49cfb77f99678657ddfe5d43017849675c64"
+      "commit": "81b951f1ac437d1eb5ff5171a0bfa6c467634b13"
     },
     "morgan/morgan.d.ts": {
-      "commit": "f11e49cfb77f99678657ddfe5d43017849675c64"
+      "commit": "81b951f1ac437d1eb5ff5171a0bfa6c467634b13"
     },
     "body-parser/body-parser.d.ts": {
-      "commit": "f11e49cfb77f99678657ddfe5d43017849675c64"
+      "commit": "81b951f1ac437d1eb5ff5171a0bfa6c467634b13"
     },
     "node-sass/node-sass.d.ts": {
-      "commit": "f11e49cfb77f99678657ddfe5d43017849675c64"
+      "commit": "81b951f1ac437d1eb5ff5171a0bfa6c467634b13"
     },
     "serve-favicon/serve-favicon.d.ts": {
-      "commit": "f11e49cfb77f99678657ddfe5d43017849675c64"
+      "commit": "81b951f1ac437d1eb5ff5171a0bfa6c467634b13"
     },
     "assert/assert.d.ts": {
-      "commit": "f11e49cfb77f99678657ddfe5d43017849675c64"
+      "commit": "81b951f1ac437d1eb5ff5171a0bfa6c467634b13"
     },
     "jquery/jquery.d.ts": {
-      "commit": "f11e49cfb77f99678657ddfe5d43017849675c64"
+      "commit": "81b951f1ac437d1eb5ff5171a0bfa6c467634b13"
     },
     "codemirror/codemirror.d.ts": {
-      "commit": "f11e49cfb77f99678657ddfe5d43017849675c64"
+      "commit": "81b951f1ac437d1eb5ff5171a0bfa6c467634b13"
+    },
+    "lodash/lodash.d.ts": {
+      "commit": "81b951f1ac437d1eb5ff5171a0bfa6c467634b13"
+    },
+    "node-cache/node-cache.d.ts": {
+      "commit": "81b951f1ac437d1eb5ff5171a0bfa6c467634b13"
     }
   }
 }

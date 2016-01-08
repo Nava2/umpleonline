@@ -7,8 +7,9 @@ os:
 #  - osx
 
 node_js:
-  - 5.3
-  - 4.2
+  - 5.3.0
+  - 5.4.0
+  - 4.2.4
 
 cache:
   directories:

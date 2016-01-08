@@ -1,22 +1,88 @@
 /// <reference path='../../typings/tsd.d.ts' />
+///<reference path='../../node_modules/immutable/dist/immutable.d.ts'/>
 
 import express = require('express');
+import fs = require('fs');
+import Immutable = require('immutable-js');
+
 const router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
+class DiagramSet {
+  private class: Map<string, string>;
+  private state: Map<string, string>;
+
+  private composite: Map<string, string>;
+
+  private static EXAMPLE_DIR = __dirname + '../../example/';
+  private static DIRS = Immutable.Map({
+    CLASS:      DiagramSet.EXAMPLE_DIR + 'class/',
+    STATE:      DiagramSet.EXAMPLE_DIR + 'sm/',
+    COMPOSITE:  DiagramSet.EXAMPLE_DIR + 'composite/',
+    MANUAL:     DiagramSet.EXAMPLE_DIR + 'manual/'
+  });
+
+  constructor(next: (loaded: DiagramSet) => void) {
+    DiagramSet.DIRS.forEach((dir, i) => {
+      fs.readdir(dir, (err, files) => {
+        if (!!err) {
+          throw err;
+        }
+
+        const EX_DIR = __dirname + '/example/';
+
+        _.filter(files, (f) => {
+          const stat = fs.statSync(EX_DIR + f);
+          return stat.isFile();
+        }).forEach((file) => {
+          var path;
+          if (MODEL_EXAMPLES.contains(file)) {
+            path = EX_DIR + 'class/' + file;
+          } else {
+            path = EX_DIR + 'sm/' + file;
+          }
+          console.log(file + ' -> ' + path);
+          fs.renameSync(EX_DIR + file, path);
+        });
+      });
+    });
+
+
+
+  }
+}
+
+class RenderData {
+
+
+  private currentCode: string;
+
+  private DEV: boolean;
+
+  private modelId: string;
+
+  private constructor() {
+
+  }
+
+  private static loadDiagrams() {
+
+  }
+
+}
+
+function(req, res, next) {
   res.render('index', {
     filename: 'filename',
     modelId: 'modelId',
     DEV: true,
     someJava: "class Shape2D {\n" +
-              "  center;\n" +
-              "}\n" +
-              "//Abstract\n" +
-              "class EllipticalShape {\n" +
-              "  isA Shape2D;\n" +
-              "  semiMajorAxis;\n" +
-              "}",
+    "  center;\n" +
+    "}\n" +
+    "//Abstract\n" +
+    "class EllipticalShape {\n" +
+    "  isA Shape2D;\n" +
+    "  semiMajorAxis;\n" +
+    "}",
     classDiagrams: {
       '2DShapes': '2DShapes',
       'AccessControl': 'Access Control',
@@ -66,6 +132,9 @@ router.get('/', function(req, res, next) {
       'WarehouseSystem': 'Warehouse System'
     }
   });
-});
+}
+
+/* GET home page. */
+router.get('/');
 
 export = router;

@@ -1,0 +1,24 @@
+// @name: Booking
+// @desc: Booking (Airline)
+// @end
+
+// UML state diagram for a Booking on an airline, represented in Umple
+
+class Booking {
+  state {
+    newBooking { 
+      assignSeat -> seatAssigned;
+      cancel -> cancelled;
+    }
+    seatAssigned {
+      cancel -> cancelled;
+      checkIn -> checkedIn;
+    }
+    checkedIn {
+      cancel -> cancelled;
+      complete -> completed;
+    }
+    cancelled {}
+    completed {}
+  }
+}
