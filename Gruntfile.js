@@ -12,7 +12,7 @@ module.exports = function (grunt) {
 
     watch: {
       client: {
-        files: ['src/client/**/*.ts', 'src/client/**/*.js', 'test/client/**/*.ts', 'bower.json'],
+        files: ['client/**/*.ts', 'client/**/*.js', 'test/client/**/*.ts', 'bower.json'],
         tasks: ['dist:client']
       },
       sass: {
@@ -52,80 +52,62 @@ module.exports = function (grunt) {
         },
         files: [{
           expand: true,
-          cwd: 'styles',
-          dest: 'public/stylesheets',
-          src: ['*.scss'],       // 'destination': 'source'
+          dest: './',
+          src: ['styles/*.scss'],       // 'destination': 'source'
           ext: '.css'
         }]
       }
     },
 
     ts: {
+
+      options: {
+        module: 'commonjs', //or commonjs
+        target: 'es5', //or es3
+        sourceMap: true,
+        declaration: false,
+        fast: 'watch'
+      },
+
       app: {
         outDir: '.',
-        src: ['src/app.ts'],
-
-        options: {
-          module: 'commonjs', //or commonjs
-          target: 'es5', //or es3
-          sourceMap: true,
-          declaration: true,
-          fast: 'watch'
-        }
+        src: ['app.ts', 'config/**/*.ts', '!**/*.d.ts']
       },
+
       routes: {
         outDir: 'routes/',
-        src: ['src/routes/**/*.ts'],
-
-        options: {
-          module: 'commonjs', //or commonjs
-          target: 'es5', //or es3
-          sourceMap: true,
-          declaration: true,
-          fast: 'watch'
-        }
+        src: ['routes/**/*.ts', '!routes/**/*.d.ts']
       },
-      client: {
-        outDir: 'public/js/',
-        src: ['src/client/**/*.ts'],
 
-        options: {
-          module: 'commonjs', //or commonjs
-          target: 'es5', //or es3
-          sourceMap: true,
-          declaration: true,
-          fast: 'watch'
-        }
+      client: {
+        outDir: 'client/',
+        src: ['client/**/*.ts', '!client/**/*.d.ts']
       },
 
       test: {
-        outDir: 'dist-test/',
-        src: 'test/**/*.test.ts',
-
-        options: {
-          module: 'commonjs', //or commonjs
-          target: 'es5', //or es3
-          sourceMap: true,
-          declaration: true,
-          fast: 'watch'
-        }
+        outDir: 'test/',
+        src: ['test/**/*.ts', '!test/**/*.d.ts']
       }
     },
+
     concat: {
       options: {
         stripBanner: true,
         separator: grunt.util.linefeed + ';' + grunt.util.linefeed
       },
-      dist: {
-        src: ['public/js/**/*.js', 'src/**/*.js', '!public/js/_bower*', '!public/js/<%= pkg.name %>*.js'],
-        dest: 'public/js/<%= pkg.name %>.js'
+
+      client: {
+        src: ['client/*.js', '*.js',
+              '!<%= bower_concat.all.dest %>', '!client/_bower.min.js', '!client/<%= pkg.name %>*.js',
+              '!app.js', '!Gruntfile.js'],
+        dest: 'client/<%= pkg.name %>.js'
       }
     },
 
     bower_concat: {
       all: {
-        dest: 'public/js/_bower.js',
-        cssDest: 'public/stylesheets/_bower.css',
+        dest: 'client/_bower.js',
+        cssDest: 'styles/_bower.css',
         separator: grunt.util.linefeed + ';' + grunt.util.linefeed,
         bowerOptions: {
           relative: false
@@ -143,26 +125,68 @@ module.exports = function (grunt) {
       },
       dist: {
         files: {
-          'public/js/<%= pkg.name %>-<%= pkg.version %>.min.js': ['<%= concat.dist.dest %>'],
-          'public/js/_bower.min.js': 'public/js/_bower.js'
+          'client/<%= pkg.name %>.min.js': ['<%= concat.client.dest %>'],
+          'client/_bower.min.js': '<%= bower_concat.all.dest %>'
         }
       }
     },
 
+    copy: {
+      // Copy client files into /public/
+      client: {
+        files: [
+          // includes files within path
+          {
+            expand: true,
+            flatten: true,
+            src: [ 'client/<%= pkg.name %>*.js', 'client/_bower*.js', 'client/<%= pkg.name %>.js.map'],
+            dest: 'public/js/',
+            filter: 'isFile'
+          },
+          // includes files within path
+          {
+            expand: true,
+            flatten: true,
+            src: [ 'styles/**/*css*'],
+            dest: 'public/stylesheets/',
+            filter: 'isFile'
+          }
+        ]
+      }
+    },
+
     clean: {
-      js: ['public/js/**/*.js', 'public/js/**/*.map', 'public/js/**/*.d.ts',
-        'routes/**/*.js', 'routes/**/*.map', 'routes/**/*.d.ts'],
-      css: ['public/stylesheets/**/*.css', 'public/stylesheets/**/*.map']
+      client: ['public/js/**/*.js',  'public/js/**/*.map', 'public/js/**/*.d.ts',
+               'client/**/*.js',     'client/**/*.map',    'client/**/*.d.ts', '!client/umple-cm-mode.js',
+               'public/stylesheets/**/*.css', 'styles/*.css', 'styles/*.map' ],
+
+      server: ['config/**/*.js',     'config/**/*.map',    'config/**/*.d.ts',
+               'routes/**/*.js',     'routes/**/*.map',    'routes/**/*.d.ts',
+               '*.js',               '*.map',              '*.d.ts',
+               '!**/*.json',         '!Gruntfile.js',      '!bower_components', '!node_modules'],
+      test: ['test/**/*.js',       'test/**/*.map',      'test/**/*.d.ts']
     },
 
     build: {
-      client: ['bower_concat', 'ts:client', 'sass'],
-      server: ['ts:routes', 'ts:app']
+      client: ['bower_concat', 'ts:client',     'sass'],
+      server: ['ts:routes',    'ts:app'],
+      test:   ['build:client', 'build:server',  'ts:test']
     },
 
     dist: {
-      client: ['build:client', 'concat', 'uglify'],
+      client: ['build:client', 'concat', 'uglify', 'copy:client'],
       server: ['build:server']
+    },
+
+    mochaTest: {
+      test: {
+        options: {
+          reporter: 'spec',
+          quiet: false, // Optionally suppress output to standard out (defaults to false)
+          clearRequireCache: false // Optionally clear the require cache before running tests (defaults to false)
+        },
+        src: ['test/**/*.js']
+      }
     }
 
   });
@@ -170,6 +194,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-sass');
@@ -179,6 +204,8 @@ module.exports = function (grunt) {
 
   grunt.loadNpmTasks('grunt-ts');
   grunt.loadNpmTasks('grunt-tsd');
+
+  grunt.loadNpmTasks('grunt-mocha-test');
 
   grunt.registerTask('init', ['jshint', 'clean', 'tsd:install']);
 
@@ -195,4 +222,6 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('default', ['init', 'dist']);
+
+  grunt.registerTask('test', ['mochaTest']);
 };

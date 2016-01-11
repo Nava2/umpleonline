@@ -1,7 +1,3 @@
-// @name: Hospital
-// @desc: Hospital
-// @end
-
 // Hospital system - sample UML class diagram in Umple
 
 class Hospital

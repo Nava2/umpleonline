@@ -1,17 +1,17 @@
-/// <reference path='../../typings/tsd.d.ts' />
-///<reference path='../../node_modules/immutable/dist/immutable.d.ts'/>
+/// <reference path='../typings/tsd.d.ts' />
+///<reference path='../node_modules/immutable/dist/immutable.d.ts'/>
 
 import express = require('express');
 import fs = require('fs');
-import Immutable = require('immutable-js');
+import Immutable = require('immutable');
 
 const router = express.Router();
 
 class DiagramSet {
-  private class: Map<string, string>;
-  private state: Map<string, string>;
+  private class: Immutable.Map<string, string>;
+  private state: Immutable.Map<string, string>;
 
-  private composite: Map<string, string>;
+  private composite: Immutable.Map<string, string>;
 
   private static EXAMPLE_DIR = __dirname + '../../example/';
   private static DIRS = Immutable.Map({
@@ -22,29 +22,30 @@ class DiagramSet {
   });
 
   constructor(next: (loaded: DiagramSet) => void) {
-    DiagramSet.DIRS.forEach((dir, i) => {
-      fs.readdir(dir, (err, files) => {
-        if (!!err) {
-          throw err;
-        }
-
-        const EX_DIR = __dirname + '/example/';
-
-        _.filter(files, (f) => {
-          const stat = fs.statSync(EX_DIR + f);
-          return stat.isFile();
-        }).forEach((file) => {
-          var path;
-          if (MODEL_EXAMPLES.contains(file)) {
-            path = EX_DIR + 'class/' + file;
-          } else {
-            path = EX_DIR + 'sm/' + file;
-          }
-          console.log(file + ' -> ' + path);
-          fs.renameSync(EX_DIR + file, path);
-        });
-      });
-    });
+    //DiagramSet.DIRS.forEach((dir, i) => {
+    //  fs.readdir(dir, (err, files) => {
+    //    if (err) {
+    //      throw err;
+    //    }
+    //
+    //    // TODO Read the meta data
+    //    const EX_DIR = __dirname + '/example/';
+    //
+    //    _.filter(files, (f) => {
+    //      const stat = fs.statSync(EX_DIR + f);
+    //      return stat.isFile();
+    //    }).forEach((file) => {
+    //      var path;
+    //      if (MODEL_EXAMPLES.contains(file)) {
+    //        path = EX_DIR + 'class/' + file;
+    //      } else {
+    //        path = EX_DIR + 'sm/' + file;
+    //      }
+    //      console.log(file + ' -> ' + path);
+    //      fs.renameSync(EX_DIR + file, path);
+    //    });
+    //  });
+    //});
 
 
 
@@ -60,7 +61,7 @@ class RenderData {
 
   private modelId: string;
 
-  private constructor() {
+  constructor() {
 
   }
 
@@ -70,7 +71,7 @@ class RenderData {
 
 }
 
-function(req, res, next) {
+function route(req, res, next) {
   res.render('index', {
     filename: 'filename',
     modelId: 'modelId',
@@ -135,6 +136,6 @@ function(req, res, next) {
 }
 
 /* GET home page. */
-router.get('/');
+router.get('/', route);
 
 export = router;

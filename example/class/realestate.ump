@@ -1,7 +1,3 @@
-// @name: realestate
-// @desc: Real Estate
-// @end
-
 // UML class diagram of a Real Estate system
 namespace realestate;
 

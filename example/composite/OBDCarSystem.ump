@@ -1,7 +1,3 @@
-// @name: OBDCarSystem
-// @desc: OBD Car System
-// @end
-
 // Example system representing aspects of a Car On-Board Diagnosis (OBD)
 // Demonstrates the composite Structure Diagram in Umple
 

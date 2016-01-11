@@ -1,7 +1,3 @@
-// @name: SecurityLight
-// @desc: Security Light
-// @end
-
 /* UML State machine and simelation of a security light
  * http://accu.org/index.php/journals/1548
  * http://www.stateworks.com/technology/TN9-Flowchart-is-not-State-Machine/

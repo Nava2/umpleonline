@@ -1,7 +1,3 @@
-// @name: WarehouseSystem
-// @desc: Warehouse System
-// @end
-
 // UML class diagram of a system for managing a warehouse
 namespace warehouse;
 

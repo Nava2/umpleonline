@@ -1,7 +1,3 @@
-// @name: Booking
-// @desc: Booking (Airline)
-// @end
-
 // UML state diagram for a Booking on an airline, represented in Umple
 
 class Booking {

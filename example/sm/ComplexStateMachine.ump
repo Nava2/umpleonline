@@ -1,7 +1,3 @@
-// @name: ComplexStateMachine
-// @desc: Complex Symbolic
-// @end
-
 // Sample UML state machine written in Umple
 // Shows nested states and transitions among those states.
 // This has a main program, so can be executed

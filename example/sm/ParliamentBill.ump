@@ -1,7 +1,3 @@
-// @name: ParliamentBill
-// @desc: Parliament Bill
-// @end
-
 // State machine of a bill in Canadian parliament represented in Umple
 
 class Bill {

@@ -1,7 +1,3 @@
-// @name: CanalSystem
-// @desc: Canal
-// @end
-
 // UML class diagram that models a canal as a network of segments, with Locks
 // See the State Machine section for a state machine for each lock
 class CanalNetwork {

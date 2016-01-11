@@ -1,7 +1,3 @@
-// @name: GarageDoor
-// @desc: Garage Door
-// @end
-
 // UML state machine digram for a Garage door, written in Umple
 // See also the YouTube video http://www.youtube.com/watch?v=mFczzVkTZ9g
 

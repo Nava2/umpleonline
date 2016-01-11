@@ -1,7 +1,3 @@
-// @name: Claim
-// @desc: Claim (Insurance)
-// @end
-
 // UML class diagram representing insurance claims
 
 namespace insurance.core;

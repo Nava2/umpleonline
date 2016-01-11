@@ -1,7 +1,3 @@
-// @name: TicTacToe
-// @desc: Tic Tac Toe or Noughts and Crosses
-// @end
-
 // Simple UML state machine of a tic-tac-toe or noughts and crosses game
 class TicTacToe {
  state {

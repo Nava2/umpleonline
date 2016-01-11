@@ -1,7 +1,3 @@
-// @name: SpecificFlightFlat
-// @desc: Specific Flight (Airline - Flat)
-// @end
-
 // State machine for an airline flight
 // Avoids the use of nested states.
 

@@ -1,7 +1,3 @@
-// @name: OhHellWhist
-// @desc: Card Games
-// @end
-
 // Umple class diagram representing card games in the Oh Hell and Whist family
 
 class Card {

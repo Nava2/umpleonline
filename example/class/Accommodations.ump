@@ -1,7 +1,3 @@
-// @name: Accommodations
-// @desc: Accommodations
-// @end
-
 // UML class diagram in Umple representing bookings in accommodations
 
 namespace accommodations;

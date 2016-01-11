@@ -1,7 +1,3 @@
-// @name: Runway
-// @desc: Runway
-// @end
-
 // UML state diagram representing an airport runway, written in Umple
 class Runway {
   Boolean noPlaneOnRunway = false;

@@ -1,7 +1,3 @@
-// @name: TrafficLightsB
-// @desc: Traffic Lights B
-// @end
-
 // UML state machine diagram of a traffic light system, written in Umple
 class IntersectionTimerDriven {
   

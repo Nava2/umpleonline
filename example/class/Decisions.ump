@@ -1,7 +1,3 @@
-// @name: Decisions
-// @desc: Decisions
-// @end
-
 // Domain model for a generic system to manage decision making within an
 // organization. The requirements are at the bottom of the file.
 // View this using options / GVClassDiagram to get a nice layout.

@@ -1,7 +1,3 @@
-// @name: SpecificFlight
-// @desc: Specific Flight (Airline)
-// @end
-
 // UML State machine for an airline flight with nested state, written in Umple
 
 class SpecificFlight {

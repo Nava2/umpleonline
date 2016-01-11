@@ -1,7 +1,3 @@
-// @name: AccessControl2
-// @desc: Access Control 2
-// @end
-
 /**
 Umple system including a state machine and class diagram for access control
  * References:

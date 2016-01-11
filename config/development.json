@@ -1,0 +1,6 @@
+{
+  "db": {
+    "name": "fileDatabase.dev.db",
+    "init": true
+  }
+}

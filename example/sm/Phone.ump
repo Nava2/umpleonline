@@ -1,7 +1,3 @@
-// @name: Phone
-// @desc: Phone and Lines
-// @end
-
 // Umple/UML system representing simulation of telephone calls between several parties
 // This system actually runs and contains a state machine of a phone call.
 // It runs best on a Mac since it calls a Mac system function for simulated voices

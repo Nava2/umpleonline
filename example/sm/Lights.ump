@@ -1,7 +1,3 @@
-// @name: Lights
-// @desc: Light (3 alternatives)
-// @end
-
 // State machines for three versions of a Light
 // From Jung Ho Bae, Yeon Ji Jeong, Heung Seok Chae, Carl K. Chang: Semantics Based
 // Cohesion and Coupling Metrics for Evaluating Understandability of State

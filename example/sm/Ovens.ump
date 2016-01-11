@@ -1,7 +1,3 @@
-// @name: Ovens
-// @desc: Oven (3 alternatives)
-// @end
-
 // Three UML state machines for part of an oven represented in Umple
 // These are adapted from:
 // J H Bae, h S Chae, C Chang,

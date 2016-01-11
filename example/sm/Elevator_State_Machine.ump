@@ -1,7 +1,3 @@
-// @name: Elevator_State_Machine
-// @desc: Elevator
-// @end
-
 // UML State machine of an elevator moving among floors
 
 class Elevator {

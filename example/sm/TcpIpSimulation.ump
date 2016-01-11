@@ -1,7 +1,3 @@
-// @name: TcpIpSimulation
-// @desc: TCP/IP Simulation
-// @end
-
 // UML state machine and and simulation of a the  TCP-IP protocol
 
 namespace tcp_simulation;

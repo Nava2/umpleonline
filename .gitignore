@@ -1,13 +1,9 @@
-dist/
-dist-test/
-
 # Typescript
 app.js
 
-routes/*.js
-src/*.js
-test/*.js
-*.js.map
+*.js
+*.css
+*.map
 *.d.ts
 
 typings/
@@ -16,10 +12,6 @@ typings/
 
 ## grunt-ts
 .baseDir*
-
-# SASS
-public/stylesheets/*.css
-public/stylesheets/*.css.map
 
 /.tscache
 # Logs
@@ -61,3 +53,5 @@ node_modules
 
 # Idea/WebStorm
 .idea/
+
+*.db
