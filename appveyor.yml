@@ -34,20 +34,27 @@ install:
 
       $tsdConfig | Out-File "$($env:USERPROFILE)\.tsdrc"
 
-  # install modules
+  # install global modules
   - npm install -g bower grunt-cli tsd
+
+  # Show some useful info:
+  - node --version
+  - npm --version
+  - bower --version
+  - tsd --version
+  - tsd rate
+
+  # Install extras
   - gem install sass
   - npm install
   - bower install
-  # We do this because of the Github Token issue
+  # We do this over `grunt tsd` because of the Github Token issues
   - tsd install
 
 # Post-install test scripts.
 test_script:
   # Output useful info for debugging.
-  - node --version
-  - npm --version
-  - bower --version
+
 
   # run tests
   - npm test

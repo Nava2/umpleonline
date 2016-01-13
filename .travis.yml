@@ -38,6 +38,8 @@ before_install:
   - node --version
   - npm --version
   - bower --version
+  - tsd --version 
+  - tsd rate
 
 install:
   - npm install
