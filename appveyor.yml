@@ -24,7 +24,7 @@ install:
   # Set the ruby path
   - SET PATH=C:\Ruby%ruby_version%\bin;%PATH%
   - ps: >-
-      $tsd_config_file = "$($env:APPVEYOR_BUILD_FOLDER)\.tsdrc"
+      $tsd_config_file = "$($pwd)\.tsdrc"
 
       Write-Host "Config file => $($tsd_config_file)"
 
