@@ -1,7 +1,7 @@
 # Test against this version of Node.js
 environment:
   TSD_GITHUB_TOKEN:
-    secure: QxRBCgabzBrBfQY3YG2fYeMy2NlxNQ4tSdBTboZ7ZTX0AWPYvVJfU0Q1IH8HaVaQ
+    secure: C+LiIelJ1iZJwJwHbAvLmh865EUB2yk+0kbvJ9iZfoXCwW1WiVn+ZR+y1LtDu34f
 
   ruby_version: "2.2.2"
 
@@ -14,7 +14,7 @@ cache:
   - node_modules                    # local npm modules
   - typings
   - bower_components
-  - '%APPDATA%\npm-cache'           # npm cache
+  - '%APPDATA%\npm-cache'             # npm cache
 
 # Install scripts. (runs after repo cloning)
 install:
@@ -23,6 +23,16 @@ install:
 
   # Set the ruby path
   - SET PATH=C:\Ruby%ruby_version%\bin;%PATH%
+  - ps: >-
+      $tsdConfig = @"
+
+      {
+          "token": "$($env:TSD_GITHUB_TOKEN)"
+      }
+
+      "@
+
+      $tsdConfig | Out-File "$($env:USERPROFILE)\.tsdrc"
 
   # install modules
   - npm install -g bower grunt-cli tsd

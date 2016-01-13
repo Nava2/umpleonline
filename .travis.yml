@@ -22,6 +22,11 @@ cache:
     # bower:
     - $TRAVIS_BUILD_DIR/bower_components
 
+notifications:
+  email:
+    on_success: change 
+    on_failure: change 
+
 before_install:
 #  - git clone https://github.com/creationix/nvm.git /tmp/.nvm
 #  - source /tmp/.nvm/nvm.sh
