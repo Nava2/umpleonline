@@ -207,7 +207,7 @@ module.exports = function (grunt) {
 
   grunt.loadNpmTasks('grunt-mocha-test');
 
-  grunt.registerTask('init', ['jshint', 'clean', 'tsd:install']);
+  grunt.registerTask('init', ['jshint', 'clean']);
 
   grunt.registerMultiTask('build', 'Build components', function () {
     this.data.forEach(function (target) {
@@ -223,5 +223,5 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', ['init', 'dist']);
 
-  grunt.registerTask('test', ['mochaTest']);
+  grunt.registerTask('test', ['build:test', 'mochaTest']);
 };

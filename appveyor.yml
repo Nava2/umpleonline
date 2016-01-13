@@ -25,10 +25,12 @@ install:
   - SET PATH=C:\Ruby%ruby_version%\bin;%PATH%
 
   # install modules
-  - npm install -g bower grunt-cli
+  - npm install -g bower grunt-cli tsd
   - gem install sass
   - npm install
   - bower install
+  # We do this because of the Github Token issue
+  - tsd install
 
 # Post-install test scripts.
 test_script:

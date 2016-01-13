@@ -29,7 +29,7 @@ before_install:
 #  - nvm use $NODE_VERSION
 
 #  Versions:
-  - npm install -g grunt-cli bower
+  - npm install -g grunt-cli bower tsd
   - node --version
   - npm --version
   - bower --version
@@ -38,6 +38,9 @@ install:
   - npm install
   - bower install
   - gem install sass
+
+  # We do this because of the Github Token issue
+  - tsd install
 
 before_script:
   - grunt init build
