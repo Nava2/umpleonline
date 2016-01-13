@@ -24,6 +24,10 @@ install:
   # Set the ruby path
   - SET PATH=C:\Ruby%ruby_version%\bin;%PATH%
   - ps: >-
+      $tsd_config_file = "$($env:APPVEYOR_BUILD_FOLDER)\.tsdrc"
+
+      Write-Host "Config file => $($tsd_config_file)"
+
       $tsdConfig = @"
 
       {
@@ -32,7 +36,12 @@ install:
 
       "@
 
-      $tsdConfig | Out-File "$($env:USERPROFILE)\.tsdrc"
+      $tsdConfig | Out-File $tsd_config_file #" fix highlighting
+
+  - ps: >-
+      $text = [IO.File]::ReadAllText($tsd_config_file) -replace "`r`n", "`n"
+
+      [IO.File]::WriteAllText($tsd_config_file, $text) #"
 
   # install global modules
   - npm install -g bower grunt-cli tsd

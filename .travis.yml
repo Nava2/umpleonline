@@ -35,8 +35,8 @@ before_install:
 
 #  Versions:
   - npm install -g grunt-cli bower tsd
-  - node --version
-  - npm --version
+  # - node --version # Not needed on Travis
+  # - npm --version
   - bower --version
   - tsd --version 
   - tsd rate
