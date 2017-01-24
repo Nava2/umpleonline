@@ -1,15 +1,13 @@
 {
   "compilerOptions": {
+    "target": "es5",
     "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": [ "es2015", "dom" ],
     "noImplicitAny": true,
-    "removeComments": true,
-    "preserveConstEnums": true,
-    "out": "dist/tsc.js",
-    "sourceMap": true
-  },
-
-  "exclude": [
-    "node_modules",
-    "wwwroot"
-  ]
+    "suppressImplicitAnyIndexErrors": true
+  }
 }
